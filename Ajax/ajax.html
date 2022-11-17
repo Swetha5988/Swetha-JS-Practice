@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    input[type="submit"] {
+      display: block;
+      margin: 0px auto;
+      background-color: aquamarine;
+      color: #000;
+      padding: 20px 40px;
+      outline: 0;
+      border: 0;
+      width: 200px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <input type="submit" id="get_data_btn" value="Get Data" />
+    <div id="data"></div>
+  </body>
+  <script>
+    let btn = document.getElementById("get_data_btn");
+    let getData = document.getElementById("data");
+    btn.addEventListener("click", loadData);
+    function loadData() {
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", "https://picsum.photos/v2/list");
+      xhr.send();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          result = xhr.responseText;
+          result = JSON.parse(result);
+          result.forEach(function (obj) {
+            getData.innerHTML += `<img src="${obj.url}" alt="Swetha">`;
+          });
+        }
+      };
+    }
+  </script>
+</html>

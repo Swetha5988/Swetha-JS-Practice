@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./index.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>Register Here</h2>
+      </div>
+      <form id="myform" autocomplete="off">
+        <div class="field">
+          <label>First Name</label>
+          <input
+            type="text"
+            id="firstName"
+            placeholder="Enter First Name"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label>Last Name</label>
+          <input
+            type="text"
+            id="lastName"
+            placeholder="Enter last Name"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label>Age</label>
+          <input type="text" id="Age" placeholder="Enter Age" required />
+        </div>
+        <div>
+          <input type="submit" id="doneButton" value="DONE" />
+          <input type="hidden" id="hidden-index" />
+        </div>
+      </form>
+      <table id="myTable">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="t-body"></tbody>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClassObject</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2 id="register-header">Register Here</h2>
+      </div>
+      <div id="form-style">
+        <form name="form1" autocomplete="off" id="myform">
+          <label for="fName">First Name : </label>
+          <input type="text" name="firstName" id="fNamefield" /><br />
+          <label for="lName">Last Name : </label>
+          <input type="text" name="lastName" id="lNamefield" /><br />
+          <label for="age">Age : </label>
+          <input type="text" name="Age" id="ageField" />
+          <input type="hidden" name="editIndex" />
+          <input type="submit" value="Done" id="done" />
+        </form>
+      </div>
+      <table id="tableId">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="t-body"></tbody>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="./task.js"></script>
+  </head>
+  <body>
+    <form name="myForm" id="myform" autocomplete="off">
+      <label for="make">Make</label>
+      <input type="text" id="make" placeholder="Enter Make" required />
+      <label for="model">Model</label>
+      <input type="text" id="model" placeholder="Enter Model" required />
+      <label for="year">Year</label>
+      <select name="year" id="year" required>
+        <option value="">Year</option>
+        <option value="1990">1990</option>
+        <option value="2000">2000</option>
+        <option value="2020">2020</option>
+        <option value="2022">2022</option>
+      </select>
+      <div class="block_buttons">
+        <div>
+          <input type="submit" id="doneButton" value="DONE" />
+        </div>
+        <div class="m-0">
+          <button type="button" id="jsonButton">JSON</button>
+        </div>
+      </div>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Make</th>
+          <th>Model</th>
+          <th>Year</th>
+        </tr>
+      </thead>
+
+      <tbody></tbody>
+    </table>
+    <div class="clear_btn">
+      <button type="button" id="clear">Clear</button>
+    </div>
+    <div id="json_body"></div>
+  </body>
+</html>

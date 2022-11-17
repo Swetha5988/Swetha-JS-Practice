@@ -1,0 +1,207 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="./practice.js"></script>
+  </head>
+  <style>
+    #parent-row {
+      border: 1px solid #ccc;
+      display: flex;
+      width: 40%;
+      text-align: center;
+      margin-top: 20px;
+    }
+    #parent-body {
+      display: none;
+      width: 40%;
+    }
+    #parent-body div {
+      display: flex;
+      text-align: center;
+      padding-left: 50px;
+      width: 100%;
+    }
+    #row-head1,
+    #row-head2,
+    #row-head3 {
+      width: 35%;
+    }
+    input[type="text"] {
+      padding: 10px 20px;
+      outline: 0;
+      text-align: center;
+      margin-right: 10px;
+    }
+    label {
+      margin-right: 20px;
+    }
+
+    .clear_btn {
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      margin-top: 20px;
+    }
+    .block_buttons {
+      width: 80%;
+      text-align: center;
+    }
+    .m-0 {
+      margin-top: 10px;
+    }
+    #json_body {
+      border: 1px solid #ccc;
+      display: none;
+      width: 50%;
+    }
+  </style>
+  <body>
+    <form name="myForm" id="myform" autocomplete="off">
+      <label for="make">Make</label>
+      <input type="text" id="make" placeholder="Enter Make" required />
+      <label for="model">Model</label>
+      <input type="text" id="model" placeholder="Enter Model" required />
+      <label for="year">Year</label>
+      <select name="year" id="year" required>
+        <option value="">Year</option>
+        <option value="1990">1990</option>
+        <option value="2000">2000</option>
+        <option value="2020">2020</option>
+        <option value="2022">2022</option>
+      </select>
+      <div class="block_buttons">
+        <div>
+          <input type="submit" id="doneButton" value="DONE" />
+        </div>
+        <div class="m-0">
+          <button type="button" id="jsonButton">JSON</button>
+        </div>
+      </div>
+    </form>
+
+    <div id="parent">
+      <div id="parent-head">
+        <div id="parent-row">
+          <div id="row-head1">Make</div>
+          <div id="row-head2">Model</div>
+          <div id="row-head3">Year</div>
+        </div>
+      </div>
+
+      <div id="parent-body"></div>
+    </div>
+    <div class="clear_btn">
+      <button type="button" id="clear">Clear</button>
+    </div>
+    <div id="json_body"></div>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JavaScript Calculator</title>
+
+    <style>
+      h1 {
+        text-align: center;
+        padding: 23px;
+        background-color: skyblue;
+        color: white;
+      }
+
+      #clear {
+        width: 270px;
+        border: 3px solid gray;
+        border-radius: 3px;
+        padding: 20px;
+        background-color: red;
+      }
+
+      .formstyle {
+        width: 300px;
+        height: 530px;
+        margin: auto;
+        border: 3px solid skyblue;
+        border-radius: 5px;
+        padding: 20px;
+      }
+
+      input {
+        width: 20px;
+        background-color: green;
+        color: white;
+        border: 3px solid gray;
+        border-radius: 5px;
+        padding: 26px;
+        margin: 5px;
+        font-size: 15px;
+      }
+
+      #calc {
+        width: 250px;
+        border: 5px solid black;
+        border-radius: 3px;
+        padding: 20px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Calculator Program in JavaScript</h1>
+    <div class="formstyle">
+      <form name="form1">
+        <!-- This input box shows the button pressed by the user in calculator. -->
+        <input id="calc" type="text" name="answer" /> <br />
+        <br />
+        <!-- Display the calculator button on the screen. -->
+        <!-- onclick() function display the number prsses by the user. -->
+        <input type="button" value="1" onclick="form1.answer.value += '1' " />
+        <input type="button" value="2" onclick="form1.answer.value += '2' " />
+        <input type="button" value="3" onclick="form1.answer.value += '3' " />
+        <input type="button" value="+" onclick="form1.answer.value += '+' " />
+        <br />
+        <br />
+
+        <input type="button" value="4" onclick="form1.answer.value += '4' " />
+        <input type="button" value="5" onclick="form1.answer.value += '5' " />
+        <input type="button" value="6" onclick="form1.answer.value += '6' " />
+        <input type="button" value="-" onclick="form1.answer.value += '-' " />
+        <br />
+        <br />
+
+        <input type="button" value="7" onclick="form1.answer.value += '7' " />
+        <input type="button" value="8" onclick="form1.answer.value += '8' " />
+        <input type="button" value="9" onclick="form1.answer.value += '9' " />
+        <input type="button" value="*" onclick="form1.answer.value += '*' " />
+        <br />
+        <br />
+
+        <input type="button" value="/" onclick="form1.answer.value += '/' " />
+        <input type="button" value="0" onclick="form1.answer.value += '0' " />
+        <input type="button" value="." onclick="form1.answer.value += '.' " />
+        <!-- When we click on the '=' button, the onclick() shows the sum results on the calculator screen. -->
+        <input
+          type="button"
+          value="="
+          onclick="form1.answer.value = eval(form1.answer.value) "
+        />
+        <br />
+        <!-- Display the Cancel button and erase all data entered by the user. -->
+        <input
+          type="button"
+          value="Clear All"
+          onclick="form1.answer.value = ' ' "
+          id="clear"
+        />
+        <br />
+      </form>
+    </div>
+  </body>
+</html>
