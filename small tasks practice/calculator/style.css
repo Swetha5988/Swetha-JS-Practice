@@ -14,10 +14,12 @@ body {
 .container {
   background-color: #dddd;
   border-radius: 5px;
-  width: 500px;
-  max-width: 100%;
+  width: 320px;
+  max-width: 320px;
   overflow: hidden;
   padding: 10px 20px;
+  height: 350px;
+  max-height: 350px;
 }
 .display-box {
   background-color: green;
@@ -25,27 +27,38 @@ body {
   border: 1px solid #ccc;
   padding: 15px 20px;
   color: #fff;
-  width: 400px;
-  margin: 0 auto;
+  width: 250px;
+  margin: 10px auto 5px;
 }
-.data-box {
-  display: flex;
-}
-.data-box div {
-  width: 50px;
-  background-color: #ccc;
-  color: #212121;
-  padding: 5px;
-  margin: 5px;
-}
-.numButtonStyle {
+
+.symButtonStyle, .numButtonStyle {
   background-color: #ccc;
   color: #212121;
   text-align: center;
-}
-#btn {
+  padding: 10px 15px;
+  margin: 10px 15px;
   width: 40px;
   max-width: 40px;
-  height: 30px;
-  max-height: 30px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+.num-sym {
+  display: flex;
+  margin-top: 20px;
+}
+#symButtonStyle1 {
+  display: block;
+  background-color: #ccc;
+  color: #212121;
+  text-align: center;
+  padding: 10px 10px;
+  margin: 10px 15px 15px 10px;
+  width: 38px;
+  max-width: 40px;
+  height: 43px;
+  max-height: 43px;
+  align-items: center;
+  justify-content: center;
 }

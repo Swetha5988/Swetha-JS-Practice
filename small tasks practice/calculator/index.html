@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
     <link rel="stylesheet" href="./style.css" />
-    <script src="./script.js"></script>
   </head>
-  <body>
+  <body onload="main()">
     <div class="container">
       <div class="display-box" id="display-text">input</div>
-      <div class="data-text"></div>
+      <div class="num-sym">
+        <div class="num-buttons" id="buttons"></div>
+        <div class="sym-buttons" id="symBtn"></div>
       </div>
     </div>
   </body>
+  <script src="./script.js"></script>
 </html>
