@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {});
 function customButton(buttonText, className) {
   return `<button type="button" class="${className}">${buttonText}</button>`;
 }
-let numbers = [];
 function allNum() {
   let arrc = Array.from(Array(10).keys()).concat([".", "="]);
   const buttons = document.getElementById("buttons");
@@ -26,19 +25,8 @@ function symbols() {
       "beforeend",
       customButton(arr[i], "symButtonStyle")
     );
-    // if (arr[i] === "+") {
-    //   console.log(numbers);
-    //   // console.log(operatorSym(numbers[0], numbers[1]));
-    // }
   }
-
-  // for (let i = 0; i < arr.length; i++) {
-  //   if (arr[i] === "+") {
-  //     console.log(operatorSym(arr[i], numbers[0], numbers[1]));
-  //   }
-  // }
 }
-
 function main() {
   allNum();
   symbols();
@@ -51,10 +39,6 @@ function main() {
     element.addEventListener("click", (event) => {
       document.getElementById("display-text").innerHTML +=
         event.target.innerHTML;
-      if (event.target.innerHTML !== "=" && event.target.innerHTML !== ".") {
-        numbers.push(parseInt(event.target.innerHTML));
-        // console.log(numbers);
-      }
     });
   });
 
@@ -71,30 +55,71 @@ function main() {
   });
 }
 
-// function operatorSym(operator, a, b) {
-//   /*if (operator === "+") {
-//     return a + b;
-//   } else if (operator === "-") {
-//     return a - b;
-//   } else if (operator === "*") {
-//     return a * b;
-//   } else if (operator === "/")
-//     return a / b;
-//   } else {
-//     alert("please enter a valid number");
-//   }*/
-// }
-
-// function result(e) {
-//   e.target.addEventListener("click", function () {
-//     let results = document.getElementById("display-text");
-//     results.innerHTML = eval(operatorSym("+", 2, 3));
-//     // console.log(eval(eval(operatorSym("+", 2, 3))));
-//   });
-// }
-
 let clearButton = document.getElementById("clear");
 clearButton.addEventListener("click", clearAll);
 function clearAll() {
   document.getElementById("display-text").innerHTML = "";
+}
+
+//Event handler for multiply/divide buttons
+
+class CalculatorStore {
+  addSub = [];
+  mulDiv = [];
+  //Reference to the array that was last updated.
+  lastUpdated = null;
+
+  evaluate = function (op1, op2, operator) {
+    let intOp1 = parseInt(op1);
+    let intOp2 = parseInt(op2);
+    switch (operator) {
+      case "+":
+        return intOp1 + intOp2;
+      case "-":
+        return intOp1 - intOp2;
+      case "*":
+        return intOp1 * intOp2;
+      case "/":
+        return intOp1 / intOp2;
+    }
+  };
+
+  addSub = function (operatorInput, operandInput) {
+    if (lastUpdated == null) {
+      addSub.push(operandInput);
+      addSub.push(operatorInput);
+    } else {
+      let result = evaluate(lastUpdated[0], operandInput, lastUpdated[1]); //Evaluate only lastUpdated
+
+      if (lastUpdated == mulDiv) {
+        //if mulDiv array
+        lastUpdated.shift();
+        lastUpdated.shift();
+        if (addSub.length > 0) {
+          addSub[1] = operatorInput;
+          addSub[0] = evaluate(addSub[0], result, addSub[1]);
+        } else {
+          console.log(addSub[0]);
+          console.log(addSub[1]);
+          addSub[0] = result;
+          addSub[1] = operatorInput;
+        }
+      } else {
+        addSub[0] = result;
+      }
+    }
+
+    lastUpdated = addSub;
+  };
+
+  mulDiv = function (operatorInput, operandInput) {
+    if (mulDiv.length == 0) {
+      mulDiv.push(operandInput);
+      mulDiv.push(operatorInput);
+    } else {
+      mulDiv[0] = evaluate(mulDiv[0], operandInput, mulDiv[1]);
+      mulDiv[1] = operatorInput;
+    }
+    lastUpdated = mulDiv;
+  };
 }
