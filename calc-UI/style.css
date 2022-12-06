@@ -3,38 +3,34 @@
   padding: 0;
 }
 body {
-  /* box-sizing: border-box; */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: #f7f7f7; */
   min-height: 40vh;
   margin: 0;
 }
-
 .container {
   box-sizing: border-box;
-  border-radius: 10px;
   width: 280px;
   max-width: 280px;
-  border-radius: 10px;
   overflow: hidden;
   padding: 10px 20px;
-  height: 340px;
-  max-height: 340px;
+  height: 400px;
+  max-height: 400px;
 }
 .row {
   box-sizing: border-box;
 }
-.display-box {
-  position: relative;
-  border: none;
+
+.position {
+  position: absolute;
+  /* bottom: 10px; */
+  top: 10px;
+  /* z-index: 100; */
 }
 .circle {
-  /* position: absolute;
-  top: 5px; */
-  height: 15px;
-  width: 15px;
+  height: 12px;
+  width: 12px;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
@@ -42,28 +38,47 @@ body {
   padding: 1px;
 }
 .fa {
-  font-size: 12px !important;
+  font-size: 10px !important;
   visibility: hidden;
-  vertical-align: text-top;
+  vertical-align: top;
+  padding: 1px;
+  color: #212121;
+}
+.icons span {
+  float: left;
+  margin-right: 7px;
+}
+.circle.red-bg {
+  background-color: rgb(227, 58, 16);
+}
+.circle.orange-bg {
+  background-color: #f39100;
+}
+.circle.green-bg {
+  background-color: rgb(103, 225, 73);
+}
+.icons:hover .fa {
+  visibility: visible;
 }
 .result {
   box-sizing: border-box;
   width: 100%;
-  font-size: 30px;
-  height: 60px;
-  /* font-weight: lighter; */
+  font-size: 40px;
+  height: 40px;
   text-align: right;
   border: none;
   background-color: #5f6368;
-  border: 1px solid #494848;
   color: #fff;
   padding: 10px;
+  z-index: 100;
 }
+
 .button {
   width: 25%;
   height: 50px;
   float: left;
   margin: 0;
+  color: #fff;
   border: 1px solid #494848;
   background-color: #8e918f;
   font-size: 20px;
@@ -78,36 +93,10 @@ body {
 input:focus {
   outline: none;
 }
-
 .operator {
   background-color: #f39100;
   color: #fff;
 }
-
 .digitzero {
   width: 50%;
 }
-/* .display-box {
-  background-color: #5f6368;
-  height: 80px;
-  max-height: 80px;
-  padding: 10px;
-}
-.circle {
-  height: 15px;
-  width: 15px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  text-align: center;
-  padding: 2px;
-}
-.fa {
-  font-size: 12px !important;
-  visibility: hidden;
-  vertical-align: text-top;
-}
-.circle:nth-child(1) + .fa {
-  visibility: visible;
-  color: red;
-} */
