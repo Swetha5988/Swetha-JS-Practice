@@ -1,12 +1,9 @@
-let arr = [1, 1, 2, 3, 1, 1, 2];
-let count = 0;
-let op = [];
-for (let i = 0; i < arr.length - 1; i++) {
-  if (op) {
-    op.push(arr[i]);
-  }
-  if (arr[i] == op[i]) {
-    count++;
-  }
+let arr = [15, 31, 62, 53, 81, 71, 42, 42];
+let freqArray = [];
+for (let i = 0; i < 99; i++) {
+  freqArray[i] = 0;
 }
-console.log(count);
+for (let i = 0; i < arr.length; i++) {
+  freqArray[arr[i]]++;
+}
+console.log(freqArray);
